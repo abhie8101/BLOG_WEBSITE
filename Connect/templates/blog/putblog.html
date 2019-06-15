@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>putblog</title>
+    <style media="screen">
+      body{
+        margin: 0;
+        padding: 0;
+        background:#D6DBEA;
+        font-family:Comic Sans MS;
+                font-size:80%;
+      }
+      .head{
+        background:lightgreen;
+        padding: 10px;
+        margin:0;
+        color:#F4F1F1;
+        font-size:150%;
+        position: sticky;
+        top :0px;
+      }
+      textarea{
+        width:80%;
+        padding: 20px;
+        margin:20px;
+        background:#eee;
+        border-radius:15px;
+        border:black 5px solid red;
+        font-size:30px;
+        font-style: cursive;
+
+      }
+      label{
+        display: none;
+      }
+      button{
+        border-radius:30%;
+        background-color:lightgreen;
+        width:150px;
+        height: 40px;
+        font-size: 100%;
+        colot:white;
+        position: relative;
+        left:100px;
+      }
+      nav{
+        background:grey;
+
+        height: 50px;
+      }
+      a{
+        padding:10px;
+        margin:10px;
+        font-size:200%;
+        text-decoration: none;
+        color:#F4F1F1;
+        text-decoration-style:solid;
+      }
+      a:hover{
+        color:black;
+        background:silver;
+        border-radius:10px;
+      }
+      #Welcome{
+        padding:10px;
+        margin:10px;
+        font-size:50px;
+        background-color:#D6DBEA;
+        color:#222222;
+      }
+      .footer{
+        margin:0;
+        padding:0px;
+        text-align: center;
+        position:fixed;
+        left:0px;
+        bottom:0px;
+        background:green;
+        color:black;
+        width:100%;
+      }
+      .empyt{
+        height:200px;
+
+      }
+    </style>
+
+
+  </head>
+  <body>
+    <div class="head">
+      <img src="\media\blog.png"style = "width:100px;margin:0;float:left;">
+      <h2 style="">WRITE WHAT YOU FEEL</h2>
+      <h1 style ="float:right;position:relative;top:-100px;">BLOGGER WEB</h1>
+    </div>
+
+    <h1 id ="Welcome">Welcome {{ request.user.username }}</h1>
+    <nav>
+        <a href="{% url 'logout' %}" style ="float:right;position:relative;top:-10px;left:300px">Logout</a>
+        <a href="/homepage">Home</a>
+        <a href="/homepage/profile">Profile</a>
+        <a href="/homepage/putblog">Post a Blog</a>
+    </nav>
+
+    <h1 style="margin:5px">"Never compare your beginning to someone else’s middle,<br>JUST start writing today to gain something in future"</h1>
+    <br>
+    <h1 style="margin:5px">Transmit your thoughts in Words and JUST KILL IT</h1>
+
+    <form class="putblog"method="POST">
+          {% csrf_token %}
+          {{ blogform}}<br>
+          <button type="submit" name="button">POST</button>
+    </form>
+
+    <div class="empty">
+      <h1>empyt</h1>
+      <h1>empty</h1>
+    </div>
+    <div class="footer">
+      <h1>DEVELOPER : Abhishek Sharma</h1>
+      <h3>Developed this website using HTML CSS  DJANGO and LOVE</h3>
+    </div>
+
+  </body>
+</html>
