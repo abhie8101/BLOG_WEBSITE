@@ -1,4 +1,5 @@
-Created Blog Website as first project using django: created blog web with HTML+ CSS for frontend ,django for backend and LOVE for coding & learning 
+Created Blog Website as first project using.
+Created blog web with HTML+ CSS for frontend ,django for backend and LOVE for coding & learning 
 
 website consist of following modules:
 1.login 
